@@ -1,0 +1,75 @@
+<html>
+<head>
+<!-- Form with validation techniques -->
+<title>Registration form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>  
+<script>  
+function validateform()
+{  
+var field_name=document.regform.field1.value;    
+if (name==null||name=="")
+{  
+  alert("Name can't be blank.Please enter a name");  
+  return false;  
+} 
+var field_id=document.regform.field2.value;
+if(isNaN(id)){
+	alert("Enter a valid number");
+	return false;} 
+else if(id==null || id=="")
+{  
+  alert("id cannot be blank.Please enter an id");  
+  return false;  
+} 
+var field_phn=document.regform.field4.value;
+if(isNaN(phn)){
+	alert("Enter a valid phone number");
+	return false; } 
+else if(phn.length!=10)
+{  
+  alert("Length of phone number should be 10");  
+  return false;  
+}
+var field_em=document.regform.field3.value;
+if (em==null || em=="")
+{  
+  alert("Email field cannot be blank.Please enter a  valid email");  
+  return false;  
+} 
+var field_rem=document.regform.field6.value;
+if (r==null || r=="")
+{  
+  alert("Please enter a remark");  
+  return false;  
+}
+if(r.length>50)
+{
+  alert("Remarks cannot be longer than 50 characters");  
+  return false; 
+}
+}  
+</script> 
+<center>
+<form name="regform" method="post" action="misc.html" onsubmit="return validateform()" >
+<fieldset><legend><b>STUDENT DETAILS</b></legend>
+<label for="field1"><span>Name <span class="required">*</span></span> <input type="text" class="input-field" name="field1"  value="" /></label>
+<label for="field2"><span>College Id<span class="required">*</span></span> <input type="text" class="input-field" name="field2"  value="" /></label>
+<label for="field3"><span>Email Address<span class="required">*</span></span> <input type="email" class="input-field" name="field3"  value="" /></label>
+<label for="field4"><span>Phone No<span class="required">*</span></span> <input type="text" class="input-field" name="field4"  value="" /></label>
+<label for="field5"><span>Department</span><select name="field5" class="select-field">
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+<option value="ECE">ME</option>
+</select></label>
+</fieldset>
+<fieldset><legend><b>REMARKS</b></legend>
+<label for="field6"><span>Remarks <span class="required">*</span></span><textarea name="field6" class="textarea-field"></textarea></label>
+<label><span> </span><input type="submit" value="Submit" /></label>
+</fieldset>
+</form>
+</div>
+</center>
+</body>
+</html>
